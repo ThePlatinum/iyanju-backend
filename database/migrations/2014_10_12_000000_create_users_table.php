@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
       $table->string('address')->nullable();
       $table->string('gender')->nullable();
       $table->string('image')->default('avater.png');
-      $table->string('bio')->default('No \'About Me\' note provided');
+      $table->string('bio')->default('No About Me note provided');
       $table->timestamp('dob')->nullable();
       $table->timestamp('email_verified_at')->nullable();
       $table->string('password');

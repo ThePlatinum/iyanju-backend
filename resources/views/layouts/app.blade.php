@@ -1,4 +1,4 @@
-@extends('theme')
+@extends('layouts.theme')
 
 @section('body')
 <nav class="sidebar close" id="sidebar">
@@ -29,9 +29,16 @@
         </li>
 
         <li class="nav-link">
-          <a href="/settings">
-            <i class='bx bx-wrench bx-flip-horizontal icon'></i>
-            <span class="text nav-text">Settings</span>
+          <a href="/submissions">
+            <i class='bx bx-home-alt icon'></i>
+            <span class="text nav-text">Submissions</span>
+          </a>
+        </li>
+
+        <li class="nav-link">
+          <a href="/schedule">
+            <i class='bx bx-home-alt icon'></i>
+            <span class="text nav-text">Schedule</span>
           </a>
         </li>
 
@@ -40,7 +47,7 @@
     <div class="bottom-content">
       <hr />
       <li class="nav-link">
-        <a href="{{ route('profile') }}">
+        <a href="{{ route('admins') }}">
           <i class='bx bx-user icon'></i>
           <span class="text nav-text">Profile</span>
         </a>
@@ -71,7 +78,7 @@
       Iyanju
       <!-- <img src="" alt=""> -->
       <div class="social">
-        <p>Product of <a href="">Platinum Innovations</a> </p>
+        <p>Product of <a href="https://emmannueldesina.vercel.app/">Platinum Innovations</a> </p>
       </div>
     </div>
   </div>

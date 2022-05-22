@@ -1,4 +1,4 @@
-@extends('theme')
+@extends('layouts.theme')
 
 @section('body')
 <div class="d-flex flex-column justify-content-between h-100">
@@ -11,7 +11,7 @@
       Iyanju
       <!-- <img src="" alt=""> -->
       <div class="social">
-        <p>copywrite Platinum @2021</p>
+        <p>@2022 from <a href="https://emmannueldesina.vercel.app/">Platinum Innovations</a> </p>
       </div>
     </div>
   </div>

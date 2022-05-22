@@ -4,8 +4,10 @@ use App\Http\Controllers\AccountsController;
 use App\Http\Controllers\ClassesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ItemsController;
+use App\Http\Controllers\SchedulesController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\StudentsController;
+use App\Http\Controllers\SubmissionsController;
 use App\Http\Controllers\TeachersController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -33,9 +35,9 @@ Route::GET('/login', function () {
 Auth::routes();
 //Removed home route ... Home = Dashboard
 Route::group(['middleware'=> ['auth']],function(){
-  Route::get('dashboard', 'Dashboard@dashboard')->name('dashboard');
-  Route::get('schedule', 'SchedulesController@schedule')->name('schedule');
-  Route::get('submissions', 'SubmissionsController@submissions')->name('submissions');
-  Route::get('users', 'UserController@users')->name('users');
-  Route::get('admin', 'UserController@admin')->name('admin');
+  Route::get('dashboard', [HomeController::class, 'index'])->name('dashboard');
+  Route::get('schedule', [SchedulesController::class, 'schedule'])->name('schedule');
+  Route::get('submissions', [SubmissionsController::class, 'submissions'])->name('submissions');
+  // Route::get('users', 'UserController@users')->name('users');
+  Route::get('admins', [UserController::class, 'admin'])->name('admins');
 });
