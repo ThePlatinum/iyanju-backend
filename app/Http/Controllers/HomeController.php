@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Submissions;
+
 class HomeController extends Controller
 {
   /**
@@ -21,6 +23,7 @@ class HomeController extends Controller
    */
   public function index()
   {
-      return view('dashboard');
+    $submissions = Submissions::all();
+    return view('dashboard');
   }
 }

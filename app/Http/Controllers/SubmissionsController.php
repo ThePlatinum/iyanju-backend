@@ -10,13 +10,19 @@ class SubmissionsController extends Controller
     //
     public function submissions()
     {
-        return view('submissions');
+      $submissions = Submissions::all();
+      return view('submissions', compact('submissions'));
+    }
+
+    public function view($id) {
+      $submission = Submissions::find($id);
+      return view('viewsubmissions', compact('submission'));
     }
 
     public function submit(Request $request){
       if ($request->hasfile('image')) {
         $file = $request->file('image');
-        $file->storeAs('files',$file->getClientOriginalName());
+        $file->storeAs('public/files',$file->getClientOriginalName());
         $image = 'files/'.$file->getClientOriginalName();
 
         $succes = Submissions::create([
@@ -27,11 +33,10 @@ class SubmissionsController extends Controller
           'image' => $image
         ]);
 
-        if ($succes) {
+        if ($succes)
           return response('Submitted successfully', 200);
-        } else {
+        else
           return response('Error', 500);
-        }
       }
       else {
         return response('No image selected', 400);
