@@ -30,9 +30,12 @@ Auth::routes();
 //Removed home route ... Home = Dashboard
 Route::group(['middleware'=> ['auth']],function(){
   Route::get('dashboard', [HomeController::class, 'index'])->name('dashboard');
+
   Route::get('schedule', [SchedulesController::class, 'schedule'])->name('schedule');
+  Route::post('addschedule', [SchedulesController::class, 'addschedule'])->name('addschedule');
+
   Route::get('submissions', [SubmissionsController::class, 'submissions'])->name('submissions');
   Route::get('viewsubmissions/{id}', [SubmissionsController::class, 'view']);
-  // Route::get('users', 'UserController@users')->name('users');
+  
   Route::get('admins', [UserController::class, 'admin'])->name('admins');
 });

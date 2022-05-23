@@ -42,6 +42,7 @@
           </div>
           <div class="modal-body">
             <form action="{{route('addschedule')}}" method="post">
+              @csrf
               <p>
                 A message will be sent to the user indicating that the <b>Iyanju</b> they submitted has been added to the schedule.
               </p>
@@ -49,9 +50,12 @@
                 <label for="reason">Email</label>
                 <input type="text" class="form-control" name="email" value="{{ $submission->email }}" readonly>
               </div>
+              <div class="form-group">
+                <input type="hidden" name="submission_id" value="{{ $submission->id }}">
+              </div>
               <div class="form-group py-3">
                 <label for="date">Date Schedule</label>
-                <input type="date" class="form-control" name="date" min={{now()}}>
+                <input type="date" class="form-control" name="schedule_date" min={{now()}}>
               </div>
               <div class="form-group py-3">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Close</button>
@@ -73,6 +77,7 @@
           </div>
           <div class="modal-body">
             <form action="" method="post">
+              @csrf
               <p>
                 Send a message to the user indicating why the <b>iyanju</b> they submitted is not acceptable.
               </p>
