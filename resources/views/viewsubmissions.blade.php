@@ -11,7 +11,7 @@
       <div class="card card-body">
         <div class="row p-3">
           <div class="col-md-6">
-            <img src="{{'/storage/'.$submission->image }}" alt="{{ $submission->displayname }}" class="img-fluid">
+            <img src="{{'/storage/'.$submission->image }}" alt="{{ $submission->displayname }}" class="img-fluid dispimg">
           </div>
           <div class="col-md-6 d-flex align-items-center">
             <div>
@@ -20,6 +20,7 @@
                 <p class="p-0 mb-1">{{ $submission->country }} | {{ $submission->email }}</p>
               </div>
               <div>
+                <p>Schedule Date: <b>{{ $submission->schedule_date ? date_format($submission->schedule_date, 'D, d M, Y') : '' }}</b> </p>
                 <p>Iyanju: <br> <b>{{ $submission->iyanju }}</b> </p>
               </div>
               <div>

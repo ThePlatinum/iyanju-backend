@@ -30,14 +30,14 @@
 
         <li class="nav-link">
           <a href="/submissions">
-            <i class='bx bx-home-alt icon'></i>
+            <i class='bx bx-book-content icon'></i>
             <span class="text nav-text">Submissions</span>
           </a>
         </li>
 
         <li class="nav-link">
           <a href="/schedule">
-            <i class='bx bx-home-alt icon'></i>
+            <i class='bx bx-calendar icon'></i>
             <span class="text nav-text">Schedule</span>
           </a>
         </li>

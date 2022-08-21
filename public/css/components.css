@@ -72,3 +72,13 @@ body::-webkit-scrollbar {
   width: 30vh;
   border-radius: 15px;
 }
+
+.dispimg {
+  max-height: 85vh;
+}
+
+.imgborder, .dispimg {
+  border: 2px solid red;
+  padding: 5px;
+  border-radius: 10px;
+}

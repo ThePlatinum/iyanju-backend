@@ -16,15 +16,17 @@
       <div class="card card-body">
         <div class="row">
           <div class="col col-2">
-            <img src="{{ url('/storage/').'/'.$submission->image }}" alt="{{ $submission->displayname }}" width='90'>
+            <img src="{{ url('/storage/').'/'.$submission['itsSub']->image }}" alt="{{ $submission['itsSub']->displayname }}" width='90' class="imgborder">
           </div>
           <div class="col px-3">
             <div class="d-flex fle-column align-items-center h-100">
               <div class="col">
-                <h6 class=" mb-1">{{ $submission->displayname }}</h6>
-                <p class="p-0 mb-1">{{ $submission->country }} | {{ $submission->email }}</p>
-                <p>Iyanju: <br> <b>{{ $submission->iyanju }}</b> </p>
-                <a href="{{ url('/viewsubmissions/').'/'.$submission->id }}" class="btn btn-sm btn-danger"> View </a>
+                <h6 class=" mb-1">{{ $submission['itsSub']->displayname }}</h6>
+                <p class="p-0 mb-1">{{ $submission['itsSub']->country }} | {{ $submission['itsSub']->email }}</p>
+                <p>Iyanju: <br> <b>{{ $submission['itsSub']->iyanju }}</b> </p>
+
+                <p>Schedule Date: <b>{{ date_format($submission->schedule_date, 'D, d M, Y') }}</b> </p>
+                <a href="{{ url('/viewsubmissions/').'/'.$submission['itsSub']->id }}" class="btn btn-sm btn-danger"> View </a>
               </div>
             </div>
           </div>

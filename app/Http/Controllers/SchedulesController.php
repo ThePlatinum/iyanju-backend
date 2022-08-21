@@ -11,12 +11,8 @@ class SchedulesController extends Controller
 
   public function allschedules()
   {
-    $submissions = [];
-    $schedules = Schedule::all();
-    foreach ($schedules as $schedule) {
-      $submissions[] = Submissions::where('id', $schedule->submission_id)->first();
-    }
-    return $submissions;
+    $schedules = Schedule::with('itsSub')->get();
+    return $schedules;
   }
   //
   public function schedule()
